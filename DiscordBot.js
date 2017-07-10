@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const key = require('./SJWbot').key;
+const key = require('./SJWbotToken').key;
  
 client.on('ready', () => {
-  console.log('');
+  console.log('SJW Bot REEEEEnitialised');
 });
  
 client.on('message', message => {
