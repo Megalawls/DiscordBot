@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Megalawls/DiscordBot#readme",
   "dependencies": {
     "discord.js": "^11.1.0",
-    "discord.js-commando": "^0.9.0"
+    "discord.js-commando": "^0.9.0",
+    "wolfram-alpha": "^0.6.0"
   }
 }
