@@ -12,7 +12,6 @@ client.registry.registerCommandsIn(__dirname + "/Commands");
 
 client.on('ready', () => {
   console.log('Tungsten Initialised. Type \"!help\" for usage information');
-  
 });
 
 
