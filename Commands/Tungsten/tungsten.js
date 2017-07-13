@@ -13,7 +13,7 @@ class tungstenCommand extends commando.Command {
 
     async run(message, args) {
         wolfram.query(args.toString(), function (err, result) {
-            if (err){ throw err;}
+            if (err){throw err;}
             message.reply("Result:" +  result[1].subpods[0].value);
         });
 
