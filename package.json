@@ -4,7 +4,7 @@
   "description": "A bot for discord that does various things",
   "main": "DiscordBot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,9 @@
     "discord.js-commando": "^0.9.0",
     "download": "^6.2.5",
     "wolfram": "^0.3.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
   }
 }

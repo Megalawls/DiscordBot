@@ -9,7 +9,7 @@ class tungresCommand extends commando.Command {
             name: "tungres",
             group: "tungsten",
             memberName: "tungres",
-            description: "Queries Wolfram-Alpha, and returns a link with an image displaying all the details of your query, along with any other interesting information"
+            description: "Queries Wolfram-Alpha, and returns a link with the raw image"
         });
     }
 
@@ -19,8 +19,12 @@ class tungresCommand extends commando.Command {
         let url = args.toString();
         let urlFinal = queryBuilder(url);
         download(urlFinal).then(data => {
-            fs.writeFileSync('foo.gif', data); 
-            message.channel.sendFile(("foo.gif"));
+            fs.writeFileSync('foo.gif', data);
+            message.channel.send("Result:", {
+                files: [
+                    "foo.gif"
+                ]
+            });
         });
     };
 }
