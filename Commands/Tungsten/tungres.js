@@ -1,6 +1,7 @@
 const commando = require("discord.js-commando");
 const Discord = require("discord.js");
-var wolfram = require('wolfram').createClient("E7RWPW-JV28GY59QR");
+const wa = require("../../wolframkey").wakey;
+var wolfram = require('wolfram').createClient(wa);
 const download = require("download");
 const fs = require("fs");
 class tungresCommand extends commando.Command {
@@ -14,8 +15,6 @@ class tungresCommand extends commando.Command {
     }
 
     async run(message, args) {
-        console.log(args);
-        console.log(args.toString());
         let url = args.toString();
         let urlFinal = queryBuilder(url);
         download(urlFinal).then(data => {

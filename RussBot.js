@@ -2,11 +2,12 @@ const commando = require("discord.js-commando");
 const Discord = require("discord.js");
 const client = new commando.Client();
 const key = require('./RussBotToken').key;
-var wolfram = require('wolfram').createClient("E7RWPW-JV28GY59QR")
+const wa = require("./wolframkey").wakey;
+var wolfram = require('wolfram').createClient(wa);
 const download = require("download");
 const fs = require("fs");
 
-client.registry.registerGroup("tungsten")
+client.registry.registerGroup("tungsten");
 client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + "/Commands");
 

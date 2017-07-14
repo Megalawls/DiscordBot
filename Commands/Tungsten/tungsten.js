@@ -1,5 +1,7 @@
 const commando = require("discord.js-commando");
-var wolfram = require('wolfram').createClient("E7RWPW-JV28GY59QR");
+const Discord = require("discord.js");
+const wa = require("../../wolframkey").wakey;
+var wolfram = require('wolfram').createClient(wa);
 
 class tungstenCommand extends commando.Command {
     constructor(client) {
@@ -12,14 +14,18 @@ class tungstenCommand extends commando.Command {
     }
 
     async run(message, args) {
-        wolfram.query(args.toString(), function (err, result) {
-            if (err){throw err;}
-            message.reply("Result:" +  result[1].subpods[0].value);
-        });
-
+        let replyWith = function (content) { message.reply(content) };
+        queryResult(args, replyWith);
     };
 }
-
+function queryResult(query, callback) {
+    wolfram.query(query, function (err, result) {
+        if (err) { throw err; };
+        callback(result[1].subpods[0].value);
+    });
+};
 
 module.exports = tungstenCommand
 
+//export the below command instead of the above one to test
+//queryResult
